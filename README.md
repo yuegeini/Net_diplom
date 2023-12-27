@@ -10,7 +10,7 @@
 
 
 ```
-git clone https://github.com/yuegeini/Net_diplom.git
+git clone git@github.com:yuegeini/Net_diplom.git
 cd Net_diplom
 docker-compose up --build
 
