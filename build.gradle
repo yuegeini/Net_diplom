@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id 'io.freefair.lombok' version "8.4"
+    id 'io.qameta.allure' version '2.11.2'
 }
 
 group = 'ru.netology'
@@ -10,6 +11,12 @@ sourceCompatibility = 11
 compileJava.options.encoding = "UTF-8"
 compileTestJava.options.encoding = "UTF-8"
 
+allure {
+    version = '2.20.1'
+    useJUnit5 {
+        version = '2.20.1'
+    }
+}
 
 repositories {
     mavenCentral()
@@ -22,6 +29,8 @@ dependencies {
     implementation 'commons-dbutils:commons-dbutils:1.7'
     implementation 'mysql:mysql-connector-java:8.0.30'
     implementation 'org.postgresql:postgresql:42.6.0'
+    implementation 'io.qameta.allure:allure-selenide:2.20.1'
+    testImplementation 'io.qameta.allure:allure-selenide:2.20.1'
 
 }
 
@@ -31,6 +40,8 @@ test {
     systemProperty 'db.url', System.getProperty('db.url')
     systemProperty 'db.user', System.getProperty('db.user', 'app')
     systemProperty 'db.password', System.getProperty('db.password', 'pass')
+    // Подлючить для MySQL
     systemProperty 'db.url', System.getProperty('db.url', "jdbc:mysql://localhost:3306/app")
+    // Подлючить для PostgreSQL
     systemProperty 'db.url', System.getProperty('db.url', "jdbc:postgresql://localhost:5432/app")
 }

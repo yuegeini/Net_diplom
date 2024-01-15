@@ -10,6 +10,8 @@ import java.util.Locale;
 import static java.time.LocalDate.now;
 
 public class DataHelper {
+    private static final String cardNumberOne =  "4444 4444 4444 4441";
+    private static final String cardNumberTwo =  "4444 4444 4444 4442";
     private static final Faker faker = new Faker(new Locale("en"));
 
     private DataHelper() {
@@ -34,7 +36,7 @@ public class DataHelper {
     }
 
     public static CardInfo getApprovedCardInfo() {
-        String cardNumber = "4444 4444 4444 4441";
+        String cardNumber = cardNumberOne;
         String month = generateMonth(2);
         String year = generateYears(1);
         String cardHolder = faker.name().firstName() + " " + faker.name().lastName();
@@ -43,7 +45,7 @@ public class DataHelper {
     }
 
     public static CardInfo getDeclinedCardInfo() {
-        String cardNumber = "4444 4444 4444 4442";
+        String cardNumber = cardNumberTwo;
         String month = generateMonth(0);
         String year = generateYears(0);
         String cardHolder = faker.name().firstName() + " " + faker.name().lastName();
@@ -52,7 +54,7 @@ public class DataHelper {
     }
 
     public static CardInfo getCardholderHyphenated() {
-        String cardNumber = "4444 4444 4444 4441";
+        String cardNumber = cardNumberOne;
         String month = generateMonth(3);
         String year = generateYears(2);
         String cardHolder = faker.name().firstName() + "-" + faker.name().lastName();
@@ -87,7 +89,7 @@ public class DataHelper {
     }
 
     public static CardInfo getEmptyMonth() {
-        String cardNumber = "4444 4444 4444 4441";
+        String cardNumber = cardNumberOne;
         String year = generateYears(2);
         String cardHolder = faker.name().firstName() + "-" + faker.name().lastName();
         String validationCode = faker.number().digits(3);
@@ -95,7 +97,7 @@ public class DataHelper {
     }
 
     public static CardInfo getMonthGetFilledLettersOrSymbols() {
-        String cardNumber = "4444 4444 4444 4441";
+        String cardNumber = cardNumberOne;
         String year = generateYears(2);
         String cardHolder = faker.name().firstName() + "-" + faker.name().lastName();
         String validationCode = faker.number().digits(3);
@@ -103,7 +105,7 @@ public class DataHelper {
     }
 
     public static CardInfo getMonthFilledOneDigit() {
-        String cardNumber = "4444 4444 4444 4441";
+        String cardNumber = cardNumberOne;
         String year = generateYears(3);
         String cardHolder = faker.name().firstName() + "-" + faker.name().lastName();
         String validationCode = faker.number().digits(3);
@@ -111,7 +113,7 @@ public class DataHelper {
     }
 
     public static CardInfo getCardMonthOver12() {
-        String cardNumber = "4444 4444 4444 4441";
+        String cardNumber = cardNumberOne;
         String year = generateYears(0);
         String cardHolder = faker.name().firstName() + "-" + faker.name().lastName();
         String validationCode = faker.number().digits(3);
@@ -120,7 +122,7 @@ public class DataHelper {
 
 
     public static CardInfo getEmptyYear() {
-        String cardNumber = "4444 4444 4444 4441";
+        String cardNumber = cardNumberOne;
         String month = generateMonth(2);
         String cardHolder = faker.name().firstName() + " " + faker.name().lastName();
         String validationCode = faker.number().digits(3);
@@ -128,7 +130,7 @@ public class DataHelper {
     }
 
     public static CardInfo getExpiredCard() {
-        String cardNumber = "4444 4444 4444 4441";
+        String cardNumber = cardNumberOne;
         String month = generateMonth(2);
         String cardHolder = faker.name().firstName() + " " + faker.name().lastName();
         String validationCode = faker.number().digits(3);
@@ -136,7 +138,7 @@ public class DataHelper {
     }
 
     public static CardInfo getCurrentYearPlus5Years() {
-        String cardNumber = "4444 4444 4444 4441";
+        String cardNumber = cardNumberOne;
         String month = generateMonth(2);
         String year = generateYears(6);
         String cardHolder = faker.name().firstName() + " " + faker.name().lastName();
@@ -145,7 +147,7 @@ public class DataHelper {
     }
 
     public static CardInfo getOneDigitInYear() {
-        String cardNumber = "4444 4444 4444 4441";
+        String cardNumber = cardNumberOne;
         String month = generateMonth(2);
         String cardHolder = faker.name().firstName() + " " + faker.name().lastName();
         String validationCode = faker.number().digits(3);
@@ -153,7 +155,7 @@ public class DataHelper {
     }
 
     public static CardInfo getEmptyCardholder() {
-        String cardNumber = "4444 4444 4444 4441";
+        String cardNumber = cardNumberOne;
         String month = generateMonth(2);
         String year = generateYears(1);
         String validationCode = faker.number().digits(3);
@@ -161,7 +163,7 @@ public class DataHelper {
     }
 
     public static CardInfo getNumbersInCardholder() {
-        String cardNumber = "4444 4444 4444 4441";
+        String cardNumber = cardNumberOne;
         String month = generateMonth(2);
         String year = generateYears(1);
         String validationCode = faker.number().digits(3);
@@ -169,7 +171,7 @@ public class DataHelper {
     }
 
     public static CardInfo getDataInSymbols() {
-        String cardNumber = "4444 4444 4444 4441";
+        String cardNumber = cardNumberOne;
         String month = generateMonth(2);
         String year = generateYears(1);
         String validationCode = faker.number().digits(3);
@@ -177,7 +179,7 @@ public class DataHelper {
     }
 
     public static CardInfo getEmptyCVC() {
-        String cardNumber = "4444 4444 4444 4441";
+        String cardNumber = cardNumberOne;
         String month = generateMonth(2);
         String year = generateYears(1);
         String cardHolder = faker.name().firstName() + " " + faker.name().lastName();
@@ -185,7 +187,7 @@ public class DataHelper {
     }
 
     public static CardInfo get2SymbolsInCVC() {
-        String cardNumber = "4444 4444 4444 4441";
+        String cardNumber = cardNumberOne;
         String month = generateMonth(2);
         String year = generateYears(1);
         String cardHolder = faker.name().firstName() + " " + faker.name().lastName();

@@ -13,10 +13,18 @@
 git clone https://github.com/yuegeini/Net_diplom.git
 cd Net_diplom
 docker-compose up --build
-
+```
+Для MySQL
+```
 java "-Dspring.datasource.url=jdbc:mysql://localhost:3306/app" -jar artifacts/aqa-shop.jar
 ./gradlew clean test "-Ddb.url=jdbc:mysql://localhost:3306/app"
-
+```
+Для PostgreSQL
+```
 java "-Dspring.datasource.url=jdbc:postgresql://localhost:5432/app" -jar artifacts/aqa-shop.jar
 ./gradlew clean test "-Ddb.url=jdbc:postgresql://localhost:5432/app"
+```
+7. Сформатировать отчет
+```
+./gradlew allureServe
 ```
