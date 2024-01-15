@@ -24,7 +24,7 @@ java "-Dspring.datasource.url=jdbc:mysql://localhost:3306/app" -jar artifacts/aq
 java "-Dspring.datasource.url=jdbc:postgresql://localhost:5432/app" -jar artifacts/aqa-shop.jar
 ./gradlew clean test "-Ddb.url=jdbc:postgresql://localhost:5432/app"
 ```
-7. Сформатировать отчет
+7. Сформировать отчет
 ```
 ./gradlew allureServe
 ```
