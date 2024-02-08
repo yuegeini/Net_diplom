@@ -10,8 +10,8 @@ import java.util.Locale;
 import static java.time.LocalDate.now;
 
 public class DataHelper {
-    private static final String cardNumberOne =  "4444 4444 4444 4441";
-    private static final String cardNumberTwo =  "4444 4444 4444 4442";
+    private static final String CARD_NUMBER_ONE =  "4444 4444 4444 4441";
+    private static final String CARD_NUMBER_TWO =  "4444 4444 4444 4442";
     private static final Faker faker = new Faker(new Locale("en"));
 
     private DataHelper() {
@@ -36,30 +36,27 @@ public class DataHelper {
     }
 
     public static CardInfo getApprovedCardInfo() {
-        String cardNumber = cardNumberOne;
         String month = generateMonth(2);
         String year = generateYears(1);
         String cardHolder = faker.name().firstName() + " " + faker.name().lastName();
         String validationCode = faker.number().digits(3);
-        return new CardInfo(cardNumber, month, year, cardHolder, validationCode);
+        return new CardInfo(CARD_NUMBER_ONE, month, year, cardHolder, validationCode);
     }
 
     public static CardInfo getDeclinedCardInfo() {
-        String cardNumber = cardNumberTwo;
         String month = generateMonth(0);
         String year = generateYears(0);
         String cardHolder = faker.name().firstName() + " " + faker.name().lastName();
         String validationCode = faker.number().digits(3);
-        return new CardInfo(cardNumber, month, year, cardHolder, validationCode);
+        return new CardInfo(CARD_NUMBER_TWO, month, year, cardHolder, validationCode);
     }
 
     public static CardInfo getCardholderHyphenated() {
-        String cardNumber = cardNumberOne;
         String month = generateMonth(3);
         String year = generateYears(2);
         String cardHolder = faker.name().firstName() + "-" + faker.name().lastName();
         String validationCode = faker.number().digits(3);
-        return new CardInfo(cardNumber, month, year, cardHolder, validationCode);
+        return new CardInfo(CARD_NUMBER_ONE, month, year, cardHolder, validationCode);
     }
 
     public static CardInfo getEmptyCardNumber() {
@@ -89,109 +86,96 @@ public class DataHelper {
     }
 
     public static CardInfo getEmptyMonth() {
-        String cardNumber = cardNumberOne;
         String year = generateYears(2);
         String cardHolder = faker.name().firstName() + "-" + faker.name().lastName();
         String validationCode = faker.number().digits(3);
-        return new CardInfo(cardNumber, "", year, cardHolder, validationCode);
+        return new CardInfo(CARD_NUMBER_ONE, "", year, cardHolder, validationCode);
     }
 
     public static CardInfo getMonthGetFilledLettersOrSymbols() {
-        String cardNumber = cardNumberOne;
         String year = generateYears(2);
         String cardHolder = faker.name().firstName() + "-" + faker.name().lastName();
         String validationCode = faker.number().digits(3);
-        return new CardInfo(cardNumber, "!w", year, cardHolder, validationCode);
+        return new CardInfo(CARD_NUMBER_ONE, "!w", year, cardHolder, validationCode);
     }
 
     public static CardInfo getMonthFilledOneDigit() {
-        String cardNumber = cardNumberOne;
         String year = generateYears(3);
         String cardHolder = faker.name().firstName() + "-" + faker.name().lastName();
         String validationCode = faker.number().digits(3);
-        return new CardInfo(cardNumber, "2", year, cardHolder, validationCode);
+        return new CardInfo(CARD_NUMBER_ONE, "2", year, cardHolder, validationCode);
     }
 
     public static CardInfo getCardMonthOver12() {
-        String cardNumber = cardNumberOne;
         String year = generateYears(0);
         String cardHolder = faker.name().firstName() + "-" + faker.name().lastName();
         String validationCode = faker.number().digits(3);
-        return new CardInfo(cardNumber, "15", year, cardHolder, validationCode);
+        return new CardInfo(CARD_NUMBER_ONE, "15", year, cardHolder, validationCode);
     }
 
 
     public static CardInfo getEmptyYear() {
-        String cardNumber = cardNumberOne;
         String month = generateMonth(2);
         String cardHolder = faker.name().firstName() + " " + faker.name().lastName();
         String validationCode = faker.number().digits(3);
-        return new CardInfo(cardNumber, month, "", cardHolder, validationCode);
+        return new CardInfo(CARD_NUMBER_ONE, month, "", cardHolder, validationCode);
     }
 
     public static CardInfo getExpiredCard() {
-        String cardNumber = cardNumberOne;
         String month = generateMonth(2);
         String cardHolder = faker.name().firstName() + " " + faker.name().lastName();
         String validationCode = faker.number().digits(3);
-        return new CardInfo(cardNumber, month, "00", cardHolder, validationCode);
+        return new CardInfo(CARD_NUMBER_ONE, month, "00", cardHolder, validationCode);
     }
 
     public static CardInfo getCurrentYearPlus5Years() {
-        String cardNumber = cardNumberOne;
         String month = generateMonth(2);
         String year = generateYears(6);
         String cardHolder = faker.name().firstName() + " " + faker.name().lastName();
         String validationCode = faker.number().digits(3);
-        return new CardInfo(cardNumber, month, year, cardHolder, validationCode);
+        return new CardInfo(CARD_NUMBER_ONE, month, year, cardHolder, validationCode);
     }
 
     public static CardInfo getOneDigitInYear() {
-        String cardNumber = cardNumberOne;
         String month = generateMonth(2);
         String cardHolder = faker.name().firstName() + " " + faker.name().lastName();
         String validationCode = faker.number().digits(3);
-        return new CardInfo(cardNumber, month, "2", cardHolder, validationCode);
+        return new CardInfo(CARD_NUMBER_ONE, month, "2", cardHolder, validationCode);
     }
 
     public static CardInfo getEmptyCardholder() {
-        String cardNumber = cardNumberOne;
         String month = generateMonth(2);
         String year = generateYears(1);
         String validationCode = faker.number().digits(3);
-        return new CardInfo(cardNumber, month, year, "", validationCode);
+        return new CardInfo(CARD_NUMBER_ONE, month, year, "", validationCode);
     }
 
     public static CardInfo getNumbersInCardholder() {
-        String cardNumber = cardNumberOne;
         String month = generateMonth(2);
         String year = generateYears(1);
         String validationCode = faker.number().digits(3);
-        return new CardInfo(cardNumber, month, year, "1234567890", validationCode);
+        return new CardInfo(CARD_NUMBER_ONE, month, year, "1234567890", validationCode);
     }
 
     public static CardInfo getDataInSymbols() {
-        String cardNumber = cardNumberOne;
         String month = generateMonth(2);
         String year = generateYears(1);
         String validationCode = faker.number().digits(3);
-        return new CardInfo(cardNumber, month, year, "!^*&(*)(_)(&^$%*}{", validationCode);
+        return new CardInfo(CARD_NUMBER_ONE, month, year, "!^*&(*)(_)(&^$%*}{", validationCode);
     }
 
     public static CardInfo getEmptyCVC() {
-        String cardNumber = cardNumberOne;
         String month = generateMonth(2);
         String year = generateYears(1);
         String cardHolder = faker.name().firstName() + " " + faker.name().lastName();
-        return new CardInfo(cardNumber, month, year, cardHolder, "");
+        return new CardInfo(CARD_NUMBER_ONE, month, year, cardHolder, "");
     }
 
     public static CardInfo get2SymbolsInCVC() {
-        String cardNumber = cardNumberOne;
         String month = generateMonth(2);
         String year = generateYears(1);
         String cardHolder = faker.name().firstName() + " " + faker.name().lastName();
         String validationCode = faker.number().digits(2);
-        return new CardInfo(cardNumber, month, year, cardHolder, validationCode);
+        return new CardInfo(CARD_NUMBER_ONE, month, year, cardHolder, validationCode);
     }
 }
